@@ -25,5 +25,5 @@ jobs:
           python-version: '3.x'
       - run: pip install -r requirements.txt
       - run: cd src/apiwrap
-      - run: for f in *.py; do python "$f"; done;
+      - run: echo "::for f in *.py; do python '$f'; done";
       - run: echo "Tested All the files" && exit 0
