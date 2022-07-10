@@ -1,0 +1,17 @@
+name: Spotify TUI workflow
+
+on:
+  push:
+    branches: ["main", "test"]
+
+jobs:
+  test-code:
+    name: Test python code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - run: pip install -r requirements.txt
+      - run: python3 main.py
